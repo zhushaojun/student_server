@@ -5,7 +5,7 @@ import sys
 from datetime import timedelta
 
 import django
-import faker
+# import faker
 from django.utils import timezone
 
 # 将项目根目录添加到 Python 的模块搜索路径中
@@ -102,7 +102,7 @@ if __name__ == '__main__':
     from api.models import Student
 
     # Student.objects.all().delete()
-    fake = faker.Faker('zh_CN')
+    # fake = faker.Faker('zh_CN')
     for i in range(100):
-        s = Student.objects.create(name=get_name(), gender=('男', '女')[i % 2], student_id=get_id())
+        s = Student.objects.create(name=get_name(), gender=random.choice(('男', '女')), student_id=get_id())
         s.save()
