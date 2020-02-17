@@ -1,4 +1,4 @@
-FROM python:3.8-alpine
+FROM python:3.7-alpine
 
 WORKDIR /app
 
@@ -19,6 +19,5 @@ RUN pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple \
 # Now copy in our code, and run it
 COPY . /app
 
-EXPOSE 8000
-
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+COPY ./entrypoint.sh /app/entrypoint.sh
+ENTRYPOINT ["/app/entrypoint.sh"]

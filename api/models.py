@@ -9,7 +9,7 @@ class Student(models.Model):
     )
     name = models.CharField("姓名", max_length=30, blank=True, default='-')
     gender = models.CharField("性别", max_length=1, blank=True, default='-', choices=GENDER_CHOICES,)
-    student_id = models.CharField("学号", max_length=8, blank=True, default='-') #unique=True
+    student_id = models.CharField("学号", max_length=10, blank=True, default='-') #unique=True
 
     class Meta:
         ordering = ["student_id"]

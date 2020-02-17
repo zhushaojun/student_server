@@ -2,16 +2,19 @@ version: '3.7'
 services:
     web:
         build: .
+        command: python manage.py runserver 0.0.0.0:8000
         ports:
             - "10000:8000"
         volumes:
             - .:/app
+        depends_on:
+            - db
         links:
             - db
-
     db:
-        image: "postgres:12-alpine"
-        ports:
-            - "5432:5432"
+        image: "postgres:11-alpine"
         environment:
             POSTGRES_PASSWORD: ncEMplEdAGOduCkLaCotWeDisant
+
+#    redis:
+#        image: "redis:5-alpine"
