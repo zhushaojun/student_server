@@ -1,6 +1,7 @@
 from django.db import models
 from datetime import datetime
 from django.contrib.postgres.fields import JSONField
+import random
 
 
 def image_path(instance, filename):
@@ -9,8 +10,16 @@ def image_path(instance, filename):
     return '{0}/{1}'.format(str(datetime.now())[:10], filename)
 
 
+random.seed()
+course_names = ("语文", "数学", "英语", "自然", "社会", "历史", "地理", "物理", "化学", "生物", "音乐")
 def get_default_json():
-    return {'语文': 80, '英语': 60}
+    result_dict = {}
+    selected_courses = random.sample(course_names, random.randint(1, len(course_names)))
+    random.shuffle(selected_courses)
+    for course in selected_courses:
+        result_dict[course] = random.randint(1, 100)
+
+    return result_dict
 
 
 # Create your models here.
