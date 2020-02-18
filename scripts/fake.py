@@ -104,5 +104,5 @@ if __name__ == '__main__':
     # Student.objects.all().delete()
     # fake = faker.Faker('zh_CN')
     for i in range(100):
-        s = Student.objects.create(name=get_name(), gender=random.choice(('男', '女')), student_id=get_id())
+        s = Student.objects.create(name=get_name(), gender=random.choice(('男', '女')), number=get_id())
         s.save()
