@@ -15,3 +15,6 @@ Pillow>=7.0.0, <7.1 # 图片上传
 # coreapi文档
 coreapi>=2.3.3, <2.4
 pyyaml>=5.3, <5.4
+
+# https from runserver
+django-sslserver
