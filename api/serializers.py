@@ -2,8 +2,13 @@ from rest_framework import serializers
 from .models import Student
 
 
-class StudentSerializer(serializers.HyperlinkedModelSerializer):
+class StudentDetailSerializer(serializers.ModelSerializer):
     class Meta:
         model = Student
-        # fields = "__all__"
-        fields = ('id', 'url', 'name', 'gender', 'number', 'photo', 'courses')
+        fields = "__all__"
+
+
+class StudentListSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Student
+        fields = ['id', 'name', 'gender', 'number']

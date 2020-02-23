@@ -36,9 +36,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'rest_framework.authtoken',
     'corsheaders',
-    "sslserver",
+    'djoser',
 
     'api',
 ]
@@ -127,6 +126,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, "static")
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
+
+#CORS
 CORS_ALLOW_CREDENTIALS = True
 CORS_ORIGIN_ALLOW_ALL = True
 SESSION_COOKIE_SAMESITE = None
@@ -136,6 +137,7 @@ CORS_ORIGIN_WHITELIST = [
 CSRF_TRUSTED_ORIGINS = [
     'localhost:8080',
 ]
+
 
 REST_FRAMEWORK = {
     'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema',
