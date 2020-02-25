@@ -12,17 +12,24 @@ def image_path(instance, filename):
 
 random.seed()
 course_names = ("语文", "数学", "英语", "自然", "社会", "历史", "地理", "物理", "化学", "生物", "音乐")
+
+
 def get_default_json():
-    result_dict = []
+    result_dict = {}
+    inputs = []
     selected_courses = random.sample(course_names, random.randint(1, len(course_names)))
     random.shuffle(selected_courses)
     for course in selected_courses:
-        result_dict.append({
+        inputs.append({
             'id': random.randint(1, 1000),
             '课程': course,
             '分数': random.randint(30, 100)
         })
         # result_dict[course] = random.randint(1, 100)
+
+    result_dict['inputs'] = inputs
+    result_dict['computes'] = {"平均分": 0, "绩点": 0}
+    result_dict['assess'] = {"评价": ""}
 
     return result_dict
 
