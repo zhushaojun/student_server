@@ -16,6 +16,6 @@ class StudentViewSet(viewsets.ModelViewSet):
     serializer_class = StudentDetailSerializer
 
     def get_serializer_class(self):
-        if self.action == 'retrieve':
-            return StudentDetailSerializer
-        return StudentListSerializer
+        if self.action == 'list':
+            return StudentListSerializer
+        return StudentDetailSerializer
