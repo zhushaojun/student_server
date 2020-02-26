@@ -9,8 +9,8 @@ class StudentDetailSerializer(serializers.ModelSerializer):
         read_only_fields = ['id', ]
 
 
-class StudentListSerializer(serializers.ModelSerializer):
+class StudentListSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Student
-        fields = ['id', 'name', 'gender', 'number']
+        fields = ['id', 'url', 'name', 'gender', 'number']
         read_only_fields = ['id', ]
