@@ -36,7 +36,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'rest_framework.authtoken',
     'corsheaders',
     'djoser',
     'drf_yasg',
@@ -152,7 +151,6 @@ REST_FRAMEWORK = {
     ),
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
-        'rest_framework.authentication.TokenAuthentication',
         'rest_framework.authentication.SessionAuthentication',
     ),
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
@@ -162,6 +160,6 @@ REST_FRAMEWORK = {
 from datetime import timedelta
 
 SIMPLE_JWT = {
-    'ACCESS_TOKEN_LIFETIME': timedelta(seconds=10),
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=30),
     'REFRESH_TOKEN_LIFETIME': timedelta(days=31),
 }
