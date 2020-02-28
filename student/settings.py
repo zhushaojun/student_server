@@ -139,7 +139,7 @@ CSRF_TRUSTED_ORIGINS = [
 ]
 
 REST_FRAMEWORK = {
-    'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema',
+    # 'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema',
     # 'DEFAULT_PERMISSION_CLASSES': (
     #     # By default we set everything to admin,
     #     #   then open endpoints on a case-by-case basis
