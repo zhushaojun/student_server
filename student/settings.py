@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'djoser',
     'drf_yasg',
     'api',
+    'users',
 ]
 
 MIDDLEWARE = [
@@ -162,4 +163,12 @@ from datetime import timedelta
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(minutes=30),
     'REFRESH_TOKEN_LIFETIME': timedelta(days=31),
+}
+
+AUTH_USER_MODEL = 'users.CustomUser'
+
+DJOSER = {
+    'SERIALIZERS': {
+        'user_create': 'users.serializers.UserRegistrationSerializer'
+    }
 }

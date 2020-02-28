@@ -100,6 +100,11 @@ if __name__ == '__main__':
     django.setup()
 
     from api.models import Student
+    from users.models import CustomUser
+
+    CustomUser.objects.create_superuser(email="admin@a.cn", password="adminpass").save()
+    CustomUser.objects.create_user(email="user1@a.cn", password="userpass").save()
+    CustomUser.objects.create_user(email="user2@a.cn", password="userpass").save()
 
     # Student.objects.all().delete()
     # fake = faker.Faker('zh_CN')
