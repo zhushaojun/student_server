@@ -1,5 +1,5 @@
-Django~=2.2.10
-psycopg2-binary~=2.8.4
+Django~=2.2.12
+psycopg2-binary~=2.8.5
 djangorestframework~=3.11.0
 
 #auth
@@ -11,9 +11,9 @@ djangorestframework-simplejwt~=4.4.0
 # django-filter>=2.2.0,<2.3
 # django-guardian>=2.1.0,<2.2
 # gunicorn>=20.0.4,<20.1
-Faker~=4.0.0
+Faker~=4.0.2
 django-cors-headers~=3.2.1
-Pillow~=7.0.0 # 图片上传
+Pillow~=7.1.1 # 图片上传
 
 # coreapi文档
 # coreapi>=2.3.3, <2.4

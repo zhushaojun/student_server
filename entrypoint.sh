@@ -1,4 +1,8 @@
-#!/bin/sh
+#!/bin/bash
+
+set -o errexit
+set -o pipefail
+set -o nounset
 
 python manage.py flush --no-input
 python manage.py makemigrations --no-input

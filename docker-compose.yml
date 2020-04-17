@@ -9,10 +9,9 @@ services:
             - .:/app
         depends_on:
             - db
-        links:
-            - db
+
     db:
-        image: "postgres:11-alpine"
+        image: "postgres:12-alpine"
         environment:
             POSTGRES_PASSWORD: ncEMplEdAGOduCkLaCotWeDisant
 
